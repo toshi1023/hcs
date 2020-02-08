@@ -1,0 +1,29 @@
+<% @page_title = "ログイン" %>
+  <h2><%= @page_title %></h2>
+  <hr>
+  <div class="container">
+    <br>
+    <div class="row">
+      <div class="col-sm-12">
+        <%= button_to "新規会員登録", {cotroller: "members", action: "new"}, {method: :get, class: "btn-square"} %>
+      </div>
+    </div>
+
+<%= form_with url: session_path, local:true do |f| %>
+    <div class="offset-sm-3 col-sm-6 offset-sm-3">
+      <h2 class="text-center">Login Page</h2>
+      <div class="form-group">
+          <label>ID</label>
+          <%= f.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+          <label>パスワード</label>
+          <%= f.password_field :password, class: "form-control" %>
+      </div>
+
+      <div class="text-center">
+        <%= f.submit "login", class: "btn btn-primary" %>
+      </div>
+    </div>
+<% end %>

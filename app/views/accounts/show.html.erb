@@ -1,0 +1,15 @@
+<% @page_title = current_member.name + "さんのマイページ" %>
+<h2><%= @page_title %></h2>
+<hr>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <%= button_to "会員情報の編集", {cotroller: "accounts", action: "edit"}, {method: :get, class: "btn-square"} %>
+    </div>
+  </div>
+  <br>
+  <%= render "members/table" %>
+  <br>
+  <br>
+</div>

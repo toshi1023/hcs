@@ -1,0 +1,36 @@
+<table class="list">
+  <thead>
+    <tr>
+      <th>日時</th>
+      <th>名前</th>
+      <th>タイトル</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- 男性会員には女性限定フラグのついた記事を公開しない -->
+    <% if current_member.sex == 1 %>
+      <% @articles.open_to_women_only.each do |article| %>
+       <tr>
+         <td><%= article.updated_at.to_s(:datetime_jp) %></td>
+         <td><%= article.writer.name %></td>
+         <td><%= truncate(article.title, length: 20) %></td>
+         <td>
+           [<%= link_to "詳細", article %>]
+         </td>
+       </tr>
+      <% end %>
+     <% elsif current_member.sex == 2 %>
+       <% @articles.each do |article| %>
+        <tr>
+          <td><%= article.updated_at.to_s(:datetime_jp) %></td>
+          <td><%= article.writer.name %></td>
+          <td><%= truncate(article.title, length: 20) %></td>
+          <td>
+            [<%= link_to "詳細", article %>]
+          </td>
+        </tr>
+       <% end %>
+     <% end %>
+  </tbody>
+</table>

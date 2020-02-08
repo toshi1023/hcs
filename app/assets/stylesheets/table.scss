@@ -1,0 +1,28 @@
+@import "bootstrap";
+
+// 記事の表デザイン
+table.list {
+  margin-top: 15px;
+  font-size: 30px;
+  width: 100%;
+}
+
+// 記事の表の行デザイン
+table.list th {
+  font-weight: nomal;
+  padding-left: 5px;
+  color: #EEE;
+  background-color: #1b2538;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+}
+
+// 記事の表の値のデザイン
+table.list td {
+  font-weight: nomal;
+  padding-left: 5px;
+  color: #1b2538;
+  background-color: #EEE;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+}

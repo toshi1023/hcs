@@ -1,0 +1,26 @@
+<% @page_title = "みんなの記事" %>
+<h2><%= @page_title %></h2>
+<hr>
+<div class="container">
+  <br>
+  <% if current_member %>
+  <div class="row">
+    <div class="col-sm-12">
+      <%= button_to "新規作成", {cotroller: "articles", action: "new"}, {method: :get, class: "btn-square"} %>
+    </div>
+  </div>
+  <% else %>
+    <p class="login_required">記事の作成にはログインが必要です</p>
+  <% end %>
+  <% if @articles.present? %>
+    <% if !(current_member) %>
+      <%= render "public_table" %>
+    <% else %>
+      <%= render "table" %>
+    <% end %>
+   <%= paginate @articles %>
+  <% else %>
+    <br>
+    <p class="login_required">記事がありません。</p>
+  <% end %>
+</div>

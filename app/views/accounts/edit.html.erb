@@ -1,0 +1,14 @@
+<% @page_title = "アカウントの編集" %>
+<h2><%= @page_title %></h2>
+<hr>
+<br>
+  <%= button_to "戻る", {cotroller: "accounts", action: "show"}, {method: :get, class: "btn-square"} %>
+<div>
+  <div class="offset-sm-3 col-sm-6 offset-sm-3">
+    <h2 class="text-center">Edit Account</h2>
+    <%= form_with as: "account", url: :account, model: @member, local:true do |form| %>
+    <%= render 'shared/member_form', form: form %>
+    <% end %>
+    <br>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="title">
+  <div class="topimage">
+    <h1>HitcHike Community Space</h1>
+  </div>
+</div>
+
+<nav class="menubar">
+  <ul>
+    <li><%= link_to "TOP", root_path %></li>
+    <li><%= link_to "記事一覧", articles_path %></li>
+    <li><%= link_to "友達検索", friends_index_path %></li>
+    <% if current_member %>
+      <li><%= link_to "マイページ", :account %></li>
+      <li><%= link_to "ログアウト", :session, method: :delete, data: {confirm: "ログアウトしますか？"} %></li>
+    <% else %>
+      <li><%= link_to "ログイン", members_path %></li>
+    <% end %>
+    <p class="notice"><%= flash.notice %></p>
+    <p class="notice"><%= flash.alert %></p>
+  </ul>
+</nav>

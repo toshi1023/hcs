@@ -1,0 +1,15 @@
+<% @page_title = "会員登録" %>
+<h2><%= @page_title %></h2>
+<hr>
+<br>
+  <%= button_to "戻る", {cotroller: "members", action: "index"}, {method: :get, class: "btn-square"} %>
+<div>
+  <div class="offset-sm-3 col-sm-6 offset-sm-3">
+    <h2 class="text-center">アカウント情報</h2>
+    <%= form_with model: @member, local:true do |form| %>
+    <!-- "form: form" は_member_form.html.erbでformメソッドを利用できるようにするため-->
+    <%= render 'shared/member_form', form: form %>
+    <% end %>
+    <br>
+  </div>
+</div>

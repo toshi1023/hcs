@@ -1,0 +1,50 @@
+<% @page_title = "#{@article.writer.name}さんの記事" %>
+<h2><%= @page_title %></h2>
+<hr>
+<br>
+  <%= button_to "戻る", {cotroller: "articles", action: "index"}, {method: :get, class: "btn-square"} %>
+<div class="container">
+  <br>
+<table class="list">
+  <tr>
+    <th>名前</th>
+    <td><%= @article.writer.name %></td>
+  </tr>
+  <tr>
+    <th>性別</th>
+    <td>
+      <% if @article.writer.sex == 1 %>
+       <%= "男性" %>
+      <% else %>
+       <%= "女性" %>
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <th>タイトル</th>
+    <td><%= @article.title %></td>
+  </tr>
+  <tr>
+    <th>本文</th>
+    <td><%= @article.content %></td>
+  </tr>
+  <% if @article.women == true %>
+  <tr>
+    <th>女性限定公開</th>
+    <td><%= @article.women %></td>
+  </tr>
+  <% end %>
+  <tr>
+    <th>更新日</th>
+    <td><%= @article.updated_at %></td>
+  </tr>
+  <tr>
+    <!-- 記事の製作者が編集・削除できるように設定 -->
+    <% if current_member == @article.writer %>
+    <th>操作</th>
+    <td>[<%= link_to "編集", edit_article_path %>] /
+        [<%= link_to "削除", article_path(@article), method: :delete, data:{ confirm: "本当に削除してもよろしいですか??"} %>]
+    </td>
+    <% end %>
+  </tr>
+</table>

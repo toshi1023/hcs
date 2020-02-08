@@ -1,0 +1,14 @@
+<% @page_title = "アカウントの編集" %>
+<h2><%= @page_title %></h2>
+<hr>
+<br>
+<p2><%= link_to "戻る", @member %></p2>
+<div>
+  <div class="offset-sm-3 col-sm-6 offset-sm-3">
+    <h2 class="text-center">Edit Account</h2>
+    <%= form_with model: @member, local:true do |form| %>
+    <%= render 'shared/member_form', form: form %>
+    <% end %>
+    <br>
+  </div>
+</div>

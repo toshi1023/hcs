@@ -1,0 +1,12 @@
+<% @page_title = "記事編集" %>
+<h2><%= @page_title %></h2>
+<hr>
+<br>
+  <%= button_to "戻る", {cotroller: "articles", action: "show"}, {method: :get, class: "btn-square"} %>
+<div>
+  <div class="offset-sm-3 col-sm-6 offset-sm-3">
+    <h2 class="text-center">Edit Article</h2>
+    <%= render 'form' %>
+    <br>
+  </div>
+</div>
