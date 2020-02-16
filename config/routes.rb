@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :articles
   # 会員と記事を関連付けたルーティング
   resources :members do
+    # 会員と記事を紐づけ
     resources :articles, only: [:index]
   end
 
