@@ -23,6 +23,7 @@
      <% elsif current_member.sex == 2 %>
        <% @articles.each do |article| %>
         <tr>
+          <!-- datetime_jp : config/initializers/time_formats.rbに設定 -->
           <td><%= article.updated_at.to_s(:datetime_jp) %></td>
           <td><%= article.writer.name %></td>
           <td><%= truncate(article.title, length: 20) %></td>

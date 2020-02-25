@@ -5,6 +5,7 @@ class AccountsController < ApplicationController
     @member = current_member
     # @account = Member.find(params[:name])
     # @articles = Article.find(params[:name])
+    @followeds = Relationship.order(updated_at: :desc)
   end
 
   def edit

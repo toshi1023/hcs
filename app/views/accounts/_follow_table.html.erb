@@ -1,0 +1,36 @@
+<p class="login_required">フォローリスト</p>
+<table class="list">
+<thead>
+  <tr>
+    <th>ニックネーム</th>
+    <th>生年月日</th>
+    <th>性別</th>
+    <th>操作</th>
+  </tr>
+</thead>
+<tbody>
+  <% @followeds.each do |followed| %>
+   <tr>
+     <td><%= followed.followed.name %></td>
+     <td><%= followed.followed.birthday %></td>
+     <td>
+       <% if followed.followed.sex == 1 %>
+         <%= "男性" %>
+       <% else %>
+         <%= "女性" %>
+       <% end %>
+     </td>
+     <td>
+     <!-- フォローの設定&解除 -->
+       [
+       <% if current_member.following?(followed.followed) %><!-- 引数はmember(=followed.followed)が入るように注意！ -->
+         <%= link_to 'フォロー中', unfollow_path(followed.followed.id), method: :POST %>
+       <% else %>
+         <%= link_to 'フォローする', follow_path(followed.followed.id), method: :POST %>
+       <% end %>
+       ]
+     </td>
+   </tr>
+  <% end %>
+</tbody>
+</table>

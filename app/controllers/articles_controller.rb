@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
       @member = Member.find(params[member_id])
     end
 
-    @articles = Article.all.order(updated_at: :desc)
+    @articles = Article.order(updated_at: :desc)
 
     # ページネーションを設定（10件につき1ページ）
     @articles = @articles.page(params[:page]).per(10)

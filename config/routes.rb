@@ -13,6 +13,12 @@ Rails.application.routes.draw do
     resources :articles, only: [:index]
   end
 
+  # フォロー機能に関するルーティング設定
+  post 'follow/:id', to: 'relationships#follow', as: 'follow'
+  post 'unfollow/:id', to: 'relationships#unfollow', as: 'unfollow'
+  post 'friends_follow/:id', to: 'relationships#friends_follow', as: 'friends_follow'
+  post 'friends_unfollow/:id', to: 'relationships#friends_unfollow', as: 'friends_unfollow'
+
   # 単数リソースのルーティング
   resource :session, only: [:create, :destroy]
   resource :account, only: [:show, :edit, :update]

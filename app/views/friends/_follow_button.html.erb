@@ -1,0 +1,10 @@
+<!-- 友達検索ページでのフォローボタン実装 -->
+<% if current_member %>
+    <div class="text-center">
+      <% if current_member.following?(@member) %>
+        <%= link_to 'フォロー中', friends_unfollow_path(@member.id), method: :POST, class: "btn btn-primary" %>
+      <% else %>
+        <%= link_to 'フォローする', friends_follow_path(@member.id), method: :POST, class: "btn btn-outline-primary" %>
+      <% end %>
+    </div>
+<% end %>

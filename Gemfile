@@ -86,3 +86,9 @@ gem 'hirb-unicode'
 group :development, :test do
   gem 'pry-rails'
 end
+
+# デバッグ機能の拡張
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
