@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_24_121111) do
+ActiveRecord::Schema.define(version: 2020_02_25_143537) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -36,18 +36,13 @@ ActiveRecord::Schema.define(version: 2020_02_24_121111) do
   end
 
   create_table "relationships", force: :cascade do |t|
-    t.integer "member_id"
-    t.integer "follow_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "follower_id"
     t.integer "followed_id"
-    t.index ["follow_id"], name: "index_relationships_on_follow_id"
     t.index ["followed_id"], name: "index_relationships_on_followed_id"
     t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
-    t.index ["member_id", "follow_id"], name: "index_relationships_on_member_id_and_follow_id", unique: true
-    t.index ["member_id"], name: "index_relationships_on_member_id"
   end
 
 end
