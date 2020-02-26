@@ -18,6 +18,7 @@
       </div>
     </div>
   <% end %>
+  <% if @friends.present? %>
    <table class="list">
      <thead>
        <tr>
@@ -54,4 +55,7 @@
      </tbody>
    </table>
    <%= paginate @friends %>
+  <% else %>
+    <p class="login_required">会員がまだ登録されていません</p>
+  <% end %>
 </div>

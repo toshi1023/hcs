@@ -22,12 +22,11 @@
          <% end %>
        </td>
        <td>
-       <!-- フォローの設定&解除 -->
+       <!-- フォローリスト&解除 -->
          [
          <% if current_member.following?(followed.followed) %><!-- 引数はmember(=followed.followed)が入るように注意！ -->
-           <%= link_to 'フォロー中', unfollow_path(followed.followed.id), method: :POST %>
-         <% else %>
-           <%= link_to 'フォローする', follow_path(followed.followed.id), method: :POST %>
+           <%= link_to "詳細", friend_path(followed.followed) %> / 
+           <%= link_to 'フォロー解除', unfollow_path(followed.followed.id), method: :POST %>
          <% end %>
          ]
        </td>
