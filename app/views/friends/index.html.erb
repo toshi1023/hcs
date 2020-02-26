@@ -41,10 +41,20 @@
             <% end %>
           </td>
           <% if current_member %>
-            <td>
-              <!-- friend_path: 引数にfriendを設定することでmemberテーブルのリクエストされたID情報を取得する -->
-              [<%= link_to "詳細", friend_path(friend) %>]
-            </td>
+            <% if current_member.administrator == true %>
+              <td>
+                <!-- 会員の削除機能を追加 -->
+                [
+                <%= link_to "詳細", friend_path(friend) %> /
+                <%= link_to "削除", friends_index_path(@friend), method: :delete, data:{ confirm: "本当に削除してもよろしいですか??"} %>
+                ]
+              </td>
+            <% else %>
+              <td>
+                <!-- friend_path: 引数にfriendを設定することでmemberテーブルのリクエストされたID情報を取得する -->
+                [<%= link_to "詳細", friend_path(friend) %>]
+              </td>
+            <% end %>
           <% else %>
             <td>
               [<%= link_to "詳細", friends_index_path %>]

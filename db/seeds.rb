@@ -6,9 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
 Member.create(
   id: 1,
+  name: "root",
+  full_name: "rootUser",
+  email: "root@xxx.co.jp",
+  birthday: "1992-10-23",
+  sex: 1,
+  administrator: true,
+  password: "root",
+  password_confirmation: "root"
+)
+
+Member.create(
+  id: 2,
   name: "aaa",
   full_name: "aaabbb",
   email: "aaa@xxx.co.jp",
@@ -20,7 +31,7 @@ Member.create(
 )
 
 Member.create(
-  id: 2,
+  id: 3,
   name: "bbb",
   full_name: "bbbccc",
   email: "bbb@xxx.co.jp",
@@ -32,7 +43,7 @@ Member.create(
 )
 
 Member.create(
-  id: 3,
+  id: 4,
   name: "ccc",
   full_name: "cccddd",
   email: "ccc@xxx.co.jp",
@@ -44,7 +55,7 @@ Member.create(
 )
 
 Member.create(
-  id: 4,
+  id: 5,
   name: "ddd",
   full_name: "dddeee",
   email: "ddd@xxx.co.jp",
@@ -56,7 +67,7 @@ Member.create(
 )
 
 Member.create(
-  id: 5,
+  id: 6,
   name: "eee",
   full_name: "eeefff",
   email: "eee@xxx.co.jp",
@@ -68,7 +79,7 @@ Member.create(
 )
 
 Member.create(
-  id: 6,
+  id: 7,
   name: "fff",
   full_name: "fffggg",
   email: "fff@xxx.co.jp",
@@ -80,7 +91,7 @@ Member.create(
 )
 
 Member.create(
-  id: 7,
+  id: 8,
   name: "ggg",
   full_name: "ggghhh",
   email: "ggg@xxx.co.jp",
@@ -92,7 +103,7 @@ Member.create(
 )
 
 Member.create(
-  id: 8,
+  id: 9,
   name: "hhh",
   full_name: "hhhiii",
   email: "hhh@xxx.co.jp",
@@ -104,7 +115,7 @@ Member.create(
 )
 
 Member.create(
-  id: 9,
+  id: 10,
   name: "iii",
   full_name: "iiijjj",
   email: "iii@xxx.co.jp",
@@ -116,7 +127,7 @@ Member.create(
 )
 
 Member.create(
-  id: 10,
+  id: 11,
   name: "jjj",
   full_name: "jjjkkk",
   email: "jjj@xxx.co.jp",
@@ -128,7 +139,7 @@ Member.create(
 )
 
 Member.create(
-  id: 11,
+  id: 12,
   name: "kkk",
   full_name: "kkkmmm",
   email: "kkk@xxx.co.jp",
@@ -143,7 +154,7 @@ Article.create(
   id: 1,
   title: "Hello!!",
   content: "Have a nice day!!",
-  member_id: 1,
+  member_id: 2,
   women: false
 )
 
@@ -151,7 +162,7 @@ Article.create(
   id: 2,
   title: "こんにちは！",
   content: "これから仲良くしましょう！",
-  member_id: 2,
+  member_id: 3,
   women: false
 )
 
@@ -159,6 +170,6 @@ Article.create(
   id: 3,
   title: "はじめまして！",
   content: "友達になりませんか？",
-  member_id: 4,
+  member_id: 5,
   women: true
 )
