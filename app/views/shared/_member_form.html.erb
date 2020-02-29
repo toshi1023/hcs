@@ -1,3 +1,9 @@
+<!-- ファイル選択ボタンとlabelを改行して分けるためdivクラス外にlabelを記載 -->
+<label>★プロフィール画像</label>
+<div class="form-group">
+    <%= form.file_field :new_profile_picture, id: "file" %>
+</div>
+<br>
 <div class="form-group">
     <label>★ID</label>
     <%= form.text_field :name, class: "form-control" %>
@@ -21,11 +27,13 @@
 </div>
 <div class="form-group">
     <label>★生年月日</label>
-    <%= form.date_select :birthday, class: "form-control" %>
+    <!-- 生年月日で使用するDateクラスをオブジェクト化 -->
+    <% d = Date.today %>
+    <%= form.date_select :birthday, start_year: d.year-60, end_year: d.year, class: "form-control" %>
 </div>
 <div class="form-group row">
   <div class="col-sm-2">
-    <%= form.label :sex, "性別", {class: 'form-label'} %>
+    <%= form.label :sex, "★性別", {class: 'form-label'} %>
   </div>
   <div class="col-sm-10 btn-group" data-toggle="buttons">
     <label class="btn btn-outline-secondary active" style="width: 50%">

@@ -2,6 +2,19 @@ class Member < ApplicationRecord
 # セキュアなパスワード機能を設定
   has_secure_password
 
+# 画像アップロード機能
+has_one_attached :profile_picture
+
+# 画像アップロード一時保存機能
+attribute :new_profile_picture
+
+# プロフィール画像をprofile_pictureにセット
+before_save do
+  if new_profile_picture
+    self.profile_picture = new_profile_picture
+  end
+end
+
 # articlesテーブルと多対単で紐づけ
   has_many :articles, dependent: :destroy
 
@@ -36,6 +49,7 @@ class Member < ApplicationRecord
   end
   # nameが存在する場合、nameをlike検索する
   scope :name_like, -> (name) { where("name LIKE ?", "%#{name}%") if name.present? }
+
 
 # 空白を禁止
   validates :name, presence: true

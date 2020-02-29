@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'friends/index'
   get 'friends/:id', to: 'friends#show', as: 'friend'
+  delete 'friends/:id', to: 'friends#destroy'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # TOPページをarticlesコントローラのindexに設定

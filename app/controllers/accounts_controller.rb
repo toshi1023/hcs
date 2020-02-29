@@ -8,6 +8,7 @@ class AccountsController < ApplicationController
     @followeds = Relationship.where(follower_id: current_member.id).order(updated_at: :desc)
   end
 
+  # ユーザアカウントの編集
   def edit
     @member = current_member
   end

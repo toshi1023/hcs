@@ -92,3 +92,6 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
 end
+
+# ActiveStorage利用
+gem 'mini_magick', '~> 4.8'
