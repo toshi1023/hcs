@@ -95,3 +95,6 @@ end
 
 # ActiveStorage利用
 gem 'mini_magick', '~> 4.8'
+
+# AWS画像保存のgem
+gem "aws-sdk-s3", require: false
