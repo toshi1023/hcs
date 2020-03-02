@@ -2,7 +2,7 @@ class FriendsController < ApplicationController
   def index
     @search_params = member_search_params
     # rootユーザは表示されないように設定
-    @friends = Member.search(@search_params).where.not(name: "root").order(updated_at: :desc)
+    @friends = Member.search(@search_params).where.not(name: "root").order(created_at: :desc)
     @friends = @friends.page(params[:page]).per(10)
   end
 
