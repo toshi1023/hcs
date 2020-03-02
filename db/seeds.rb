@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Member.create(
-  id: 1,
   name: "root",
   full_name: "rootUser",
   email: "root@xxx.co.jp",
