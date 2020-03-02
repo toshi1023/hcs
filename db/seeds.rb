@@ -19,7 +19,6 @@ Member.create(
 )
 
 Member.create(
-  id: 2,
   name: "aaa",
   full_name: "aaabbb",
   email: "aaa@xxx.co.jp",
@@ -31,7 +30,6 @@ Member.create(
 )
 
 Member.create(
-  id: 3,
   name: "bbb",
   full_name: "bbbccc",
   email: "bbb@xxx.co.jp",
@@ -43,7 +41,6 @@ Member.create(
 )
 
 Member.create(
-  id: 4,
   name: "ccc",
   full_name: "cccddd",
   email: "ccc@xxx.co.jp",
@@ -55,7 +52,6 @@ Member.create(
 )
 
 Member.create(
-  id: 5,
   name: "ddd",
   full_name: "dddeee",
   email: "ddd@xxx.co.jp",
@@ -67,7 +63,6 @@ Member.create(
 )
 
 Member.create(
-  id: 6,
   name: "eee",
   full_name: "eeefff",
   email: "eee@xxx.co.jp",
@@ -79,7 +74,6 @@ Member.create(
 )
 
 Member.create(
-  id: 7,
   name: "fff",
   full_name: "fffggg",
   email: "fff@xxx.co.jp",
@@ -91,7 +85,6 @@ Member.create(
 )
 
 Member.create(
-  id: 8,
   name: "ggg",
   full_name: "ggghhh",
   email: "ggg@xxx.co.jp",
@@ -103,7 +96,6 @@ Member.create(
 )
 
 Member.create(
-  id: 9,
   name: "hhh",
   full_name: "hhhiii",
   email: "hhh@xxx.co.jp",
@@ -115,7 +107,6 @@ Member.create(
 )
 
 Member.create(
-  id: 10,
   name: "iii",
   full_name: "iiijjj",
   email: "iii@xxx.co.jp",
@@ -127,7 +118,6 @@ Member.create(
 )
 
 Member.create(
-  id: 11,
   name: "jjj",
   full_name: "jjjkkk",
   email: "jjj@xxx.co.jp",
@@ -139,7 +129,6 @@ Member.create(
 )
 
 Member.create(
-  id: 12,
   name: "kkk",
   full_name: "kkkmmm",
   email: "kkk@xxx.co.jp",
@@ -151,7 +140,6 @@ Member.create(
 )
 
 Article.create(
-  id: 1,
   title: "Hello!!",
   content: "Have a nice day!!",
   member_id: 2,
@@ -159,7 +147,6 @@ Article.create(
 )
 
 Article.create(
-  id: 2,
   title: "こんにちは！",
   content: "これから仲良くしましょう！",
   member_id: 3,
@@ -167,7 +154,6 @@ Article.create(
 )
 
 Article.create(
-  id: 3,
   title: "はじめまして！",
   content: "友達になりませんか？",
   member_id: 5,
