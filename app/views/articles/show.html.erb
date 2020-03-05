@@ -47,4 +47,8 @@
     </td>
     <% end %>
   </tr>
+  <tr>
+    <th>いいね！</th>
+    <td><%= render partial: "likes/like", locals: { article: @article, likes: @likes } %></td>
+  </tr>
 </table>

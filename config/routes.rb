@@ -6,8 +6,13 @@ Rails.application.routes.draw do
 
   # TOPページをarticlesコントローラのindexに設定
   root 'top#index'
+  
   # 全記事表示用のルーティング
-  resources :articles
+  resources :articles do
+    # いいね！機能のルーティング
+    resources :likes, only: [:create, :destroy]
+  end
+
   # 会員と記事を関連付けたルーティング
   resources :members do
     # 会員と記事を紐づけ

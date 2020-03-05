@@ -1,0 +1,23 @@
+<% if current_member %>
+  <!-- すでに、いいね！をしている場合はいいね！を解除 -->
+  <% if @article.like_member(current_member.id) %>
+    <!-- article_like_pathの第一引数はチュートリアルで設定されているlikesでは上手くいかない -->
+    <%= button_to article_like_path(member_id: current_member.id, article_id: @article.id), method: :delete, id: "like-button", remote: true, class: "btn btn-primary" do %>
+      <span>
+        <%= @article.likes_count %>
+      </span>
+    <% end %>
+  <% else %>
+  <!-- いいね！がまだの場合はいいね！を設定 -->
+    <%= button_to article_likes_path(@article), id: "like-button", remote: true, class: "btn btn-primary" do %>
+      <span>
+        <%= @article.likes_count %>
+      </span>
+    <% end %>
+  <% end %>
+<% else %>
+<!-- 会員以外の人はいいね！の数だけを閲覧できる -->
+    <span>
+      <%= @article.likes_count %>
+    </span>
+<% end %>
